@@ -12,3 +12,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model doencas {
+  id        Int     @id @default(autoincrement())
+  titulo    String
+  descricao String
+  author    String
+  created_at DateTime @default(now())
+  updated    DateTime @updatedAt
+
+}
