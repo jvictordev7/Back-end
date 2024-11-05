@@ -11,7 +11,7 @@ const start = async () => {
     try {
         await app.listen({ port: 3333 });
     } catch (error) {
-        process.exit(1);  // Exiting the process if server fails to start
+        process.exit(1);  
     }
 };
 

@@ -1,22 +1,22 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import { CreateDoencasService } from "../service/CreateServiceDoencas";
+import { CreateDoencaService } from "../service/CreateServiceDoenca";
 
-interface CreateDoencasProps {
+interface CreateDoencaProps {
     titulo: string;
     descricao: string;
     author:   string;
 }
 
-class CreateControllerDoencas {
+class CreateControllerDoenca {
     async handle(request: FastifyRequest, reply: FastifyReply) {
         const {
-            titulo, descricao, author } = request.body as CreateDoencasProps;
+            titulo, descricao, author } = request.body as CreateDoencaProps;
 
-        const doencaService = new CreateDoencasService();    
+        const doencaService = new CreateDoencaService();    
 
         const doenca = await doencaService.execute({ titulo, descricao, author});
         reply.send(doenca)
     }
 }
 
-export {CreateControllerDoencas};
+export {CreateControllerDoenca};

@@ -4,7 +4,7 @@ import fastify, {
     FastifyReply,
     FastifyRequest,
 } from "fastify";
-import { CreateControllerDoencas } from "./controllers/CreateControllerDoencas";
+import { CreateControllerDoenca } from "./controllers/CreateControllerDoenca";
 
 export async function routes(
     fastify: FastifyInstance,
@@ -22,7 +22,7 @@ export async function routes(
     fastify.post(
         '/doenca',
         async (request: FastifyRequest, reply: FastifyReply) => {
-            return new CreateControllerDoencas().handle(request, reply); // Passando request e reply corretamente
+            return new CreateControllerDoenca().handle(request, reply); 
         }
     );
 }
